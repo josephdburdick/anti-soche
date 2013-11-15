@@ -1,0 +1,5 @@
+<Response>
+	<Say voice="woman">You scheduled this call to potentially excuse yourself from an awkward situation.</Say>
+	<Say voice="woman">Have a great day!</Say>
+	<Play>http://demo.twilio.com/docs/classic.mp3</Play>
+</Response>
