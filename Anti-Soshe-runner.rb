@@ -1,24 +1,15 @@
 class Call
 	def initialize name="Stranger"
-		# @name = name
-		# #ENV["TWILIO_SID"], #ENV["TWILIO_TOKEN"]
-		# @account_sid = ACc2d26a95fb33e6aa99ee48c0b8d0ccbd 
-		# @auth_token = e02a21c7a27fb9b00e8889d38db4d54b 
-		# @client = Twilio::REST::Client.new(@account_sid, @auth_token)
-		# @account = @client.account
+		@name = name
+
+		@account_sid = ENV["TWILIO_SID"]
+		@auth_token = ENV["TWILIO_TOKEN"]
+		@client = Twilio::REST::Client.new(@account_sid, @auth_token)
+		@account = @client.account
 		
-		# introduce
+		introduce
 
-		@account_sid = 'ACc2d26a95fb33e6aa99ee48c0b8d0ccbd'
-@auth_token = e02a21c7a27fb9b00e8889d38db4d54b
-
-# set up a client to talk to the Twilio REST API
-@client = Twilio::REST::Client.new(@account_sid, @auth_token)
-
-
-@account = @client.account
-@message = @account.sms.messages.create({:from => '+13473345606', :to => '6466757303', :body => 'test'})
-puts @message
+		
 	end
 
 	def name
