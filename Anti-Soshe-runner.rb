@@ -1,4 +1,5 @@
 class Call
+	attr_accessor :name
 	def initialize name="Stranger"
 		@name = name
 
@@ -6,19 +7,9 @@ class Call
 		@auth_token = ENV["TWILIO_TOKEN"]
 		@client = Twilio::REST::Client.new(@account_sid, @auth_token)
 		@account = @client.account
-		
 		introduce
-
-		
 	end
 
-	def name
-		@name
-	end
-
-	def name=(name)
-		@name = name
-	end
 	def makeCall
 		call = @account.calls.create({
 			:url => "http://joeylabs.com/projects/twilio/voice.xml",
